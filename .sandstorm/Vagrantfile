@@ -20,7 +20,7 @@ end
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Base on the Sandstorm snapshots of the official Debian 9 (stretch) box with vboxsf support.
-  config.vm.box = "debian/contrib-stretch64"
+  config.vm.box = "debian/bullseye64"
 
   if Vagrant.has_plugin?("vagrant-vbguest") then
     # vagrant-vbguest is a Vagrant plugin that upgrades
