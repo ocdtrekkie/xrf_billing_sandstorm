@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `g_config` (
   PRIMARY KEY (`site_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Overall system configuration';
 
-INSERT IGNORE INTO g_config (site_name) VALUES('SandstormSite');
+INSERT IGNORE INTO g_config (site_name) VALUES('XRF Billing');
 
 CREATE TABLE IF NOT EXISTS `g_log` (
   `id` int(16) NOT NULL AUTO_INCREMENT,

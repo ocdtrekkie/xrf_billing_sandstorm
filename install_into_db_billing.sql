@@ -47,3 +47,6 @@ CREATE TABLE IF NOT EXISTS `b_orders` (
   `closed` int(1) NOT NULL DEFAULT '0' COMMENT 'If 0, order is open.  If 1, order is closed.',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT IGNORE INTO g_modules (`name`,`prefix`,`folder`,`ord`,`active`) VALUES('Billing','b','billing',1,1);
+INSERT IGNORE INTO g_modules (`name`,`prefix`,`folder`,`ord`,`active`) VALUES('Taxes','tx','taxes',2,1);
