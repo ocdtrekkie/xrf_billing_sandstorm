@@ -19,7 +19,7 @@ jobs:
       - name: Git Sync Action
         uses: wei/git-sync@v3.0.0
         with:
-          source_repo: "ocdtrekkie/xrf_core_sandstorm"
+          source_repo: "ocdtrekkie/xrf_billing_sandstorm"
           source_branch: "refs/remotes/source/*"
           destination_repo: "${{ secrets.SYNC_URL }}"
           destination_branch: "refs/heads/*"
