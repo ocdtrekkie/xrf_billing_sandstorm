@@ -19,7 +19,7 @@ else
 {
 $passid = $_GET['passid'];
 $id=(int)$passid;
-echo "<b>Edit Order</b><p>";
+echo "<b>Edit Invoice</b><p>";
 
 $query="SELECT * FROM b_orders WHERE id='$id'";
 $result=mysqli_query($xrf_db, $query) or die(mysqli_error($xrf_db));
@@ -33,7 +33,7 @@ if ($closed == 1)
 
 echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=editorder&do=edit\" method=\"POST\">
 <table><tr><td><b>Customer:</b></td><td>$customer <input type=\"hidden\" name=\"id\" value=\"$id\"><input type=\"submit\" value=\"Save Changes\"></td></tr>
-<tr><td><b>Order Notes:</b></td><td><textarea name=\"notes\" rows=\"8\" cols=\"50\">$notes</textarea></td></tr>
+<tr><td><b>Notes:</b></td><td><textarea name=\"notes\" rows=\"8\" cols=\"50\">$notes</textarea></td></tr>
 <tr><td><b>Status:</b></td><td><input type=\"radio\" name=\"clsdchk\" value=0$clsdn> Open <input type=\"radio\" name=\"clsdchk\" value=1$clsdy> Closed</td></tr>
 </table></form>";
 }

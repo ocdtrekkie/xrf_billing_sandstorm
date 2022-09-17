@@ -17,7 +17,7 @@ if ($filter == "closed")
 if ($cndlbl == "")
 	$cndlbl = "All";
 
-echo "<b>$cndlbl Orders</b><p>";
+echo "<p align=\"left\" class=\"actions-bar\"><b>Actions:</b> <font size=\"2\"><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addorder\">[Create New Invoice]</a></font></p><p><b>$cndlbl Invoices</b></p>";
 
 $query="SELECT * FROM b_orders$condition ORDER BY date DESC";
 $result=mysqli_query($xrf_db, $query);

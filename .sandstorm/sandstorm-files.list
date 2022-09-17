@@ -110,6 +110,7 @@ opt/app/ismodule.php
 opt/app/modules/billing/acpm_addcharge.php
 opt/app/modules/billing/acpm_addorder.php
 opt/app/modules/billing/acpm_addpayment.php
+opt/app/modules/billing/acpm_closeorder.php
 opt/app/modules/billing/acpm_editorder.php
 opt/app/modules/billing/acpm_orderlist.php
 opt/app/modules/billing/acpm_vieworder.php
