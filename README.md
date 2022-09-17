@@ -1,8 +1,7 @@
-# XRF Core Components for Sandstorm
+# XRF Billing for Sandstorm
 
-XRF, which was backronymed into standing for Xtensible Resource Framework, is a PHP web application framework intended to support a variety of relatively dissimilar websites under a common format. XRF Core contains common files that will be necessary for any XRF-based Sandstorm app, such as the global files and common function files.
+XRF Billing is a very lightweight and barely functional invoice/order tracking system for Sandstorm.
 
-## System Requirements
+## Additional credits
 
-* PHP 7.0 or better
-* MySQL
+Earth image courtesy of NASA
