@@ -94,6 +94,7 @@ opt/app/acp_users.php
 opt/app/acp_view_log.php
 opt/app/includes/footer.php
 opt/app/includes/functions_auth.php
+opt/app/includes/functions_bbc.php
 opt/app/includes/functions_db.php
 opt/app/includes/functions_get.php
 opt/app/includes/functions_redir.php
@@ -109,7 +110,9 @@ opt/app/ismodule.php
 opt/app/modules/billing/acpm_addcharge.php
 opt/app/modules/billing/acpm_addorder.php
 opt/app/modules/billing/acpm_addpayment.php
+opt/app/modules/billing/acpm_editorder.php
 opt/app/modules/billing/acpm_orderlist.php
+opt/app/modules/billing/acpm_vieworder.php
 opt/app/modules/billing/controlpanel.php
 opt/app/modules/billing/functions_billing.php
 opt/app/modules/taxes/acpm_selectrecords.php
