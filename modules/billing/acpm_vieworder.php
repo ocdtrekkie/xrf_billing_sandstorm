@@ -6,7 +6,7 @@ $id=(int)$_GET['id'];
 xrfb_update_order($xrf_db, $id);
 $query="SELECT * FROM b_orders WHERE id='$id'";
 $result=mysqli_query($xrf_db, $query);
-$uid=xrf_mysql_result($result,0,"uid");
+$customer=xrf_mysql_result($result,0,"customer");
 $date=xrf_mysql_result($result,0,"date");
 $aid=xrf_mysql_result($result,0,"aid");
 $notes=xrf_mysql_result($result,0,"notes");
@@ -14,17 +14,14 @@ $amt_taxes=xrf_mysql_result($result,0,"amt_taxes");
 $amt_due=xrf_mysql_result($result,0,"amt_due");
 $amt_paid=xrf_mysql_result($result,0,"amt_paid");
 $closed=xrf_mysql_result($result,0,"closed");
-$lname=xrf_get_lname($xrf_db, $uid);
-$fname=xrf_get_fname($xrf_db, $uid);
-$alname=xrf_get_lname($xrf_db, $aid);
-$afname=xrf_get_fname($xrf_db, $aid);
 $notes=xrf_bbcode_format($notes);
+$ausername = xrf_get_username($xrf_db, $aid);
 
 $queryy="SELECT * FROM b_charges WHERE oid='$id'";
 $resulty=mysqli_query($xrf_db, $queryy);
 $num=mysqli_num_rows($resulty);
 
-echo "<p align=\"left\"><b>Order #$id</b><br><b><a href=\"acp_view_user.php?id=$uid\">$lname, $fname</a><br>$date</b><br>Associate: $alname, $afname</p><p align=\"left\">Notes: $notes</p><p><table>
+echo "<p align=\"left\"><b>Order #$id</b><br><b>$customer<br>$date</b><br>Associate: $ausername</p><p align=\"left\">Notes: $notes</p><p><table>
 <tr><td width=420><b>Item</b></td><td width=\"80\" align=\"right\"><b>Charge</b></td><td width=\"80\" align=\"right\"><b>Quantity</b></td><td width=\"80\" align=\"right\"><b>Amount</b></td></tr>";
 $qq=0;
 while ($qq < $num) {

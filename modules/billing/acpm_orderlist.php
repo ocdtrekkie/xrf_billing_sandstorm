@@ -29,12 +29,10 @@ $qq=0;
 while ($qq < $num) {
 
 $id=xrf_mysql_result($result,$qq,"id");
-$uid=xrf_mysql_result($result,$qq,"uid");
+$customer=xrf_mysql_result($result,$qq,"customer");
 $date=xrf_mysql_result($result,$qq,"date");
 $amt_due=xrf_mysql_result($result,$qq,"amt_due");
 $amt_paid=xrf_mysql_result($result,$qq,"amt_paid");
-$lname=xrf_get_lname($xrf_db, $uid);
-$fname=xrf_get_fname($xrf_db, $uid);
 
 $due = $amt_due - $amt_paid;
 if($due <= 0)
@@ -44,7 +42,7 @@ else
 $cash = xrfb_disp_cash($due);
 }
 
-echo "<tr><td>$id</td><td><a href=\"acp_view_user.php?id=$uid\">$lname, $fname</a> ($uid)</td><td><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=vieworder&id=$id\">$cash</a></td><td>$date</td></tr>";
+echo "<tr><td>$id</td><td>$customer</td><td><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=vieworder&id=$id\">$cash</a></td><td>$date</td></tr>";
 $qq++;
 }
 
