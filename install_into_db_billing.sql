@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `b_categories` (
 
 CREATE TABLE IF NOT EXISTS `b_charges` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
-  `uid` int(8) NOT NULL COMMENT 'User id of customer',
+  `customer` varchar(128) NOT NULL COMMENT 'Email address of customer',
   `oid` int(8) NOT NULL COMMENT 'Order id',
   `iid` int(8) NOT NULL COMMENT 'Item id',
   `amt` int(32) NOT NULL COMMENT 'Amount for this item',

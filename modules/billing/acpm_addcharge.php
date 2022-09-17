@@ -15,9 +15,9 @@ $cstatus = "";
 
 $query="SELECT * FROM b_orders WHERE id='$corderid'";
 $result=mysqli_query($xrf_db, $query);
-@$ccustomerid=xrf_mysql_result($result,0,"uid");
+@$ccustomer=xrf_mysql_result($result,0,"customer");
 
-mysqli_query($xrf_db, "INSERT INTO b_charges (uid, oid, iid, amt, quantity, status) VALUES('$ccustomerid', '$corderid', '$ccharge', '$camount', '$cquantity', '$cstatus')") or die(mysqli_error($xrf_db));
+mysqli_query($xrf_db, "INSERT INTO b_charges (customer, oid, iid, amt, quantity, status) VALUES('$ccustomer', '$corderid', '$ccharge', '$camount', '$cquantity', '$cstatus')") or die(mysqli_error($xrf_db));
 xrfb_update_order($xrf_db, $corderid); 
 
 xrf_go_redir("acp_module_panel.php?modfolder=$modfolder&modpanel=vieworder&id=$corderid","Charge added.",6);

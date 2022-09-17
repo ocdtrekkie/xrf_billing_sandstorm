@@ -21,8 +21,12 @@ $queryy="SELECT * FROM b_charges WHERE oid='$id'";
 $resulty=mysqli_query($xrf_db, $queryy);
 $num=mysqli_num_rows($resulty);
 
-echo "<p align=\"left\"><b>Invoice #$id</b><br><b>$customer<br>$date</b><br>Associate: $ausername</p><p align=\"left\">Notes: $notes</p><p><table>
-<tr><td width=420><b>Item</b></td><td width=\"80\" align=\"right\"><b>Charge</b></td><td width=\"80\" align=\"right\"><b>Quantity</b></td><td width=\"80\" align=\"right\"><b>Amount</b></td></tr>";
+echo "<p align=\"left\"><b>Invoice #$id</b><br><b>$customer<br>$date</b><br>Associate: $ausername</p>";
+
+if ($notes != "") echo "<p align=\"left\">Notes: $notes</p>";
+
+echo "<p><table width=100%>
+<tr><td width=600><b>Description</b></td><td align=\"right\"><b>Amount</b></td></tr>";
 $qq=0;
 while ($qq < $num) {
 
@@ -41,7 +45,11 @@ $status2 = xrfb_disp_cash($amt * $quantity);
 if ($status == "W")
 $status2 = "Waived";
 
-echo "<tr><td>$iname</td><td align=\"right\">$cash</td><td align=\"center\"> x $quantity</td><td align=\"right\">$status2</td></tr>";
+if ($quantity > 1)
+$quantity = "($quantity) ";
+else $quantity = "";
+
+echo "<tr><td>$quantity$iname</td><td align=\"right\">$status2</td></tr>";
 $qq++;
 }
 
@@ -51,9 +59,12 @@ $due = xrfb_disp_cash($amt_due);
 $paid = xrfb_disp_cash($amt_paid);
 $owed = xrfb_disp_cash($amt_due - $amt_paid);
 if ($closed == 0) { $modifylinks = " <a href=\"acp_module_panel.php?modfolder=billing&modpanel=addcharge&passid=$id\">[Add Charge]</a> <a href=\"acp_module_panel.php?modfolder=billing&modpanel=addpayment&passid=$id\">[Add Payment]</a> <a href=\"acp_module_panel.php?modfolder=billing&modpanel=closeorder&passid=$id\">[Close Invoice]</a>"; }
-echo "</table></p><p align=\"right\"><table><tr><td width=\"100\">Subtotal:</td><td align=\"right\" width=\"100\">$subtotal</td></tr>
-<tr><td>Taxes:</td><td align=\"right\">$taxes</td></tr></table></p>
-<p align=\"right\"><table><tr><td width=\"100\">Total:</td><td align=\"right\" width=\"100\">$due</td></tr>
+echo "</table></p>";
+
+if ($subtotal != $due) echo "<p align=\"right\"><table><tr><td width=\"100\">Subtotal:</td><td align=\"right\" width=\"100\">$subtotal</td></tr>
+<tr><td>Taxes:</td><td align=\"right\">$taxes</td></tr></table></p>";
+
+echo "<p align=\"right\"><table><tr><td width=\"100\">Total:</td><td align=\"right\" width=\"100\">$due</td></tr>
 <tr><td>Paid:</td><td align=\"right\">$paid</td></tr>
 <tr><td><b>Unpaid:</b></td><td align=\"right\"><b>$owed</b></td></tr></table></p>
 
