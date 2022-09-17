@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `g_config` (
   `admin_email` varchar(128) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'admin@example.com' COMMENT 'The master admin''s email for alert and notification purposes',
   `admin_id` int(8) NOT NULL DEFAULT '1' COMMENT 'The master admin''s ID',
   `vlog_enabled` int(1) NOT NULL DEFAULT '0' COMMENT 'If 1, enable verbose logging.',
-  `style_default` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'xrflight' COMMENT 'Style to use by default',
+  `style_default` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'xrfdark' COMMENT 'Style to use by default',
   PRIMARY KEY (`site_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Overall system configuration';
 

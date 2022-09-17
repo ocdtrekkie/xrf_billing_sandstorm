@@ -2,7 +2,7 @@
 require("ismodule.php");
 echo "<b>Calculate Tax Records</b><p>";
 
-$query="SELECT * FROM g_users WHERE uclass LIKE '%A%' ORDER BY lname ASC";
+$query="SELECT * FROM g_users WHERE ulevel > 2";
 $result=mysqli_query($xrf_db, $query);
 $num=mysqli_num_rows($result);
 
@@ -12,19 +12,19 @@ echo "<form action=\"acp_module_panel.php?modfolder=taxes&modpanel=viewrecords\"
 $qq=0;
 while ($qq < $num) {
 $c_id=xrf_mysql_result($result,$qq,"id");
-$c_fname=xrf_mysql_result($result,$qq,"fname");
-$c_lname=xrf_mysql_result($result,$qq,"lname");
+$c_username=xrf_mysql_result($result,$qq,"username");
 
 if ($c_id == $xrf_myid) $pickme = " selected";
 	else $pickme = "";
 
-echo "<option value='$c_id'$pickme>$c_fname $c_lname</option>";
+echo "<option value='$c_id'$pickme>$c_username</option>";
 
 $qq++;
 }
 
 echo "</select></td></tr>
 <tr><td><b>Year:</b></td><td><select name=\"taxyear\">
+<option value=\"2022\">2022</option>
 <option value=\"2021\">2021</option>
 <option value=\"2020\">2020</option>
 <option value=\"2019\">2019</option>

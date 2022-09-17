@@ -1,6 +1,5 @@
 <?php
 require("ismodule.php");
-require("includes/functions_class.php");
 $do = $_GET['do'];
 if ($do == "add")
 {
@@ -29,7 +28,7 @@ echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addorder
 <tr><td><b>Order Notes:</b></td><td><textarea name=\"notes\" rows=\"8\" cols=\"50\"></textarea></td></tr>
 <tr><td><b>Associate:</b></td><td><select name=\"assoc\">";
 
-$queryq="SELECT * FROM g_users";
+$queryq="SELECT * FROM g_users WHERE ulevel > 2";
 $resultq=mysqli_query($xrf_db, $queryq);
 $num=mysqli_num_rows($resultq);
 
@@ -37,12 +36,8 @@ $qq=0;
 while ($qq < $num) {
 
 $aid=xrf_mysql_result($resultq,$qq,"id");
-$alname=xrf_mysql_result($resultq,$qq,"lname");
-$afname=xrf_mysql_result($resultq,$qq,"fname");
-$auclass=xrf_mysql_result($resultq,$qq,"uclass");
-
-if (xrf_has_uclass($auclass,"A"))
-echo "<option value=\"$aid\">$alname, $afname</option>";
+$ausername=xrf_mysql_result($resultq,$qq,"username");
+echo "<option value=\"$aid\">$ausername</option>";
 
 $qq++;
 }
