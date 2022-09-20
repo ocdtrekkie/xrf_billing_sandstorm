@@ -68,5 +68,5 @@ echo "<p align=\"right\"><table><tr><td width=\"100\">Total:</td><td align=\"rig
 <tr><td>Paid:</td><td align=\"right\">$paid</td></tr>
 <tr><td><b>Unpaid:</b></td><td align=\"right\"><b>$owed</b></td></tr></table></p>
 
-<p align=\"left\" class=\"actions-bar\"><b>Actions:</b> <font size=\"2\"><a href=\"acp_module_panel.php?modfolder=billing&modpanel=editorder&passid=$id\">[Edit Invoice]</a>$modifylinks [E-Mail Receipt] [Print Invoice]</font></p>";
+<p align=\"left\" class=\"actions-bar\"><b>Actions:</b> <font size=\"2\"><a href=\"acp_module_panel.php?modfolder=billing&modpanel=editorder&passid=$id\">[Edit Invoice]</a>$modifylinks <a href=\"#\" onclick=\"window.print();return false;\">[Print Invoice]</a></font></p>";
 ?>
