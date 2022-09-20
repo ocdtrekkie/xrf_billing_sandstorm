@@ -21,7 +21,7 @@ $queryy="SELECT * FROM b_charges WHERE oid='$id'";
 $resulty=mysqli_query($xrf_db, $queryy);
 $num=mysqli_num_rows($resulty);
 
-echo "<p align=\"left\"><b>Invoice #$id</b><br><b>$customer<br>$date</b><br>Associate: $ausername</p>";
+echo "<p align=\"left\"><b>Invoice #$id</b><br><b>$customer<br>" . date_format(date_create($date), 'F jS, Y') . "</b><br>Associate: $ausername</p>";
 
 if ($notes != "") echo "<p align=\"left\">Notes: $notes</p>";
 
