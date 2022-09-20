@@ -116,6 +116,7 @@ opt/app/modules/billing/acpm_orderlist.php
 opt/app/modules/billing/acpm_vieworder.php
 opt/app/modules/billing/controlpanel.php
 opt/app/modules/billing/functions_billing.php
+opt/app/modules/billing/include_bconfig.php
 opt/app/modules/taxes/acpm_selectrecords.php
 opt/app/modules/taxes/controlpanel.php
 opt/app/styles/print/style.css

@@ -10,7 +10,7 @@ echo "<html><head><title>$xrf_site_name</title>
 echo "<div class=\"header\" align=\"center\">
 <table width=\"100%\"><tr><td>
 <p align=\"left\">
-<font size=\"6\">$xrf_site_name</font><br>
+<span class=\"site-name\"><font size=\"6\">$xrf_site_name</font></span><span class=\"print-logo\"><img src=\"$xrfb_print_logo\" width=\"400\"></span><br>
 <span class=\"navigation-box\">$xrf_myusername ($xrf_myemail)</span>
 </p>
 </td><td>

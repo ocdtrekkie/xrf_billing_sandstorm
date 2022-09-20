@@ -4,12 +4,12 @@ put the following code within the <head> tags of all the pages you want to imple
 */
 body {
         background: #FFFFFF;
-     	font-family: Verdana;
+     	font-family: Calibri;
         color: #000;
 }
 
 a {
-	font-family: Verdana;
+	font-family: Calibri;
         text-decoration: none;
         color: #000;
 	border-color: #000;
@@ -37,12 +37,20 @@ a:hover {
 	margin-right:auto;
 	padding: 5px;
 	background-color: #FFFFFF;
-	border: 1px solid black;
+	border: 0px;
 	outline-style: none;
 }
 
 .footer{
     display: none;
+}
+
+.site-name{
+	display: none;
+}
+
+.print-logo{
+	display: block;
 }
 
 .navigation-box{

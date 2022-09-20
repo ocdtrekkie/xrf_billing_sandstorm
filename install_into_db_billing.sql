@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS `b_charges` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Individual charges on orders';
 
 CREATE TABLE IF NOT EXISTS `b_config` (
+  `print_logo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `inv_line1` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `inv_line2` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `inv_line3` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
@@ -23,8 +24,10 @@ CREATE TABLE IF NOT EXISTS `b_config` (
   `inv_line5` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `inv_line6` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `tax_rate` float NOT NULL DEFAULT '0' COMMENT 'Rate of tax to be applied to orders',
-  PRIMARY KEY (`inv_line1`)
+  PRIMARY KEY (`print_logo`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Billing module configuration table';
+
+INSERT INTO `b_config` (`print_logo`, `inv_line1`, `inv_line2`, `inv_line3`, `inv_line4`, `inv_line5`, `inv_line6`, `tax_rate`) VALUES ('', '', '', '', '', '', '', '0');
 
 CREATE TABLE IF NOT EXISTS `b_inventory` (
   `id` int(8) NOT NULL AUTO_INCREMENT,

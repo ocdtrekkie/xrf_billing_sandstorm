@@ -61,6 +61,10 @@ a:hover {
 	background-image: url(images/footer.png);
 }
 
+.print-logo{
+	display: none;
+}
+
 td, tr {
 	vertical-align:top;
 	padding: 0px;
