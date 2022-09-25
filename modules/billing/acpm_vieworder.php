@@ -21,12 +21,12 @@ $queryy="SELECT * FROM b_charges WHERE oid='$id'";
 $resulty=mysqli_query($xrf_db, $queryy);
 $num=mysqli_num_rows($resulty);
 
-echo "<p align=\"left\"><b>Invoice #$id</b><br><b>$customer<br>" . date_format(date_create($date), 'F jS, Y') . "</b><br>Associate: $ausername</p>";
+echo "<p><table width=100%><tr><td><b>Invoice #$id<br>$customer</b></td><td width=250>" . date_format(date_create($date), 'F jS, Y') . "<br>Associate: $ausername</td></tr></table></p>";
 
-if ($notes != "") echo "<p align=\"left\">Notes: $notes</p>";
+if ($notes != "") echo "<p align=\"left\"><table><tr><td>Notes: $notes</td></tr></table></p>";
 
 echo "<p><table width=100%>
-<tr><td width=600><b>Description</b></td><td align=\"right\"><b>Amount</b></td></tr>";
+<tr><td width=100%><b>Description</b></td><td align=\"right\"><b>Amount</b></td></tr>";
 $qq=0;
 while ($qq < $num) {
 
@@ -61,10 +61,10 @@ $owed = xrfb_disp_cash($amt_due - $amt_paid);
 if ($closed == 0) { $modifylinks = " <a href=\"acp_module_panel.php?modfolder=billing&modpanel=addcharge&passid=$id\">[Add Charge]</a> <a href=\"acp_module_panel.php?modfolder=billing&modpanel=addpayment&passid=$id\">[Add Payment]</a> <a href=\"acp_module_panel.php?modfolder=billing&modpanel=closeorder&passid=$id\">[Close Invoice]</a>"; }
 echo "</table></p>";
 
-if ($subtotal != $due) echo "<p align=\"right\"><table><tr><td width=\"100\">Subtotal:</td><td align=\"right\" width=\"100\">$subtotal</td></tr>
+if ($subtotal != $due) echo "<p align=\"right\"><table><tr><td width=\"150\">Subtotal:</td><td align=\"right\" width=\"100\">$subtotal</td></tr>
 <tr><td>Taxes:</td><td align=\"right\">$taxes</td></tr></table></p>";
 
-echo "<p align=\"right\"><table><tr><td width=\"100\">Total:</td><td align=\"right\" width=\"100\">$due</td></tr>
+echo "<p align=\"right\"><table><tr><td width=\"150\">Total:</td><td align=\"right\" width=\"100\">$due</td></tr>
 <tr><td>Paid:</td><td align=\"right\">$paid</td></tr>
 <tr><td><b>Unpaid:</b></td><td align=\"right\"><b>$owed</b></td></tr></table></p>
 
