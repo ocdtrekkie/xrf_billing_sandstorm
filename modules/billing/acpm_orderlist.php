@@ -42,7 +42,7 @@ else
 $cash = xrfb_disp_cash($due);
 }
 
-echo "<tr><td>$id</td><td>$customer</td><td><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=vieworder&id=$id\">$cash</a></td><td>$date</td></tr>";
+echo "<tr><td><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=vieworder&id=$id\">$id</a></td><td><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=vieworder&id=$id\">$customer</a></td><td><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=vieworder&id=$id\">$cash</a></td><td>$date</td></tr>";
 $qq++;
 }
 
