@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `b_inventory` (
 CREATE TABLE IF NOT EXISTS `b_orders` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `customer` varchar(128) NOT NULL COMMENT 'Email address of customer',
-  `date` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Date of billing yyyy-mm-dd hh:mm:ss',
+  `date` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Date of billing yyyy-mm-dd',
   `aid` int(8) NOT NULL DEFAULT '1' COMMENT 'User ID of Associate',
   `notes` text COLLATE utf8_unicode_ci NOT NULL,
   `amt_taxes` int(32) NOT NULL DEFAULT '0',

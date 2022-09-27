@@ -34,6 +34,10 @@ if [ ! -e /var/.db-created ]; then
 	mysql --user root --database app < /opt/app/install_into_db_billing.sql
     touch /var/.db-created
 fi
+if [ ! -e /var/.db-2209.1 ]; then
+	mysql --user root --database app < /opt/app/install_into_db_billing_2209.1.sql
+	touch /var/.db-2209.1
+fi
 
 while [ ! -e /var/run/php/php7.4-fpm.sock ] ; do
     echo "waiting for php-fpm7.4 to be available at /var/run/php/php7.4-fpm.sock"

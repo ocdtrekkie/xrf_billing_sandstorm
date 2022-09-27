@@ -66,7 +66,26 @@ if ($subtotal != $due) echo "<p align=\"right\"><table><tr><td width=\"150\">Sub
 
 echo "<p align=\"right\"><table><tr><td width=\"150\">Total:</td><td align=\"right\" width=\"100\">$due</td></tr>
 <tr><td>Paid:</td><td align=\"right\">$paid</td></tr>
-<tr><td><b>Unpaid:</b></td><td align=\"right\"><b>$owed</b></td></tr></table></p>
+<tr><td><b>Unpaid:</b></td><td align=\"right\"><b>$owed</b></td></tr></table></p>";
 
-<p align=\"left\" class=\"actions-bar\"><b>Actions:</b> <font size=\"2\"><a href=\"acp_module_panel.php?modfolder=billing&modpanel=editorder&passid=$id\">[Edit Invoice]</a>$modifylinks <a href=\"#\" onclick=\"window.print();return false;\">[Print Invoice]</a></font></p>";
+$queryx="SELECT * FROM b_payments WHERE oid='$id'";
+$resultx=mysqli_query($xrf_db, $queryx);
+$num=mysqli_num_rows($resultx);
+
+if ($num > 0) {
+	echo "<br><p><br><b>Payment Summary</b><br></p><p><table width=100%>
+	<tr><td><b>Date</b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td width=100%><b>Payment Method</b></td><td align=\"right\"><b>Amount</b></td></tr>";
+	$qq=0;
+	while ($qq < $num) {
+		$pdate=xrf_mysql_result($resultx,$qq,"date");
+		$pdetails=xrf_mysql_result($resultx,$qq,"details");
+		$pamt=xrf_mysql_result($resultx,$qq,"amt");
+		$pamt=xrfb_disp_cash($pamt);
+		echo "<tr><td style=\"white-space: nowrap;\">" . date_format(date_create($pdate), 'F jS, Y') . "</td><td></td><td>$pdetails</td><td align=\"right\">$pamt</td></tr>";
+		$qq++;
+	}
+	echo "</table></p>";
+}
+
+echo "<p align=\"left\" class=\"actions-bar\"><b>Actions:</b> <font size=\"2\"><a href=\"acp_module_panel.php?modfolder=billing&modpanel=editorder&passid=$id\">[Edit Invoice]</a>$modifylinks <a href=\"#\" onclick=\"window.print();return false;\">[Print Invoice]</a></font></p>";
 ?>
