@@ -2,7 +2,7 @@
 require("ismodule.php");
 require("modules/$modfolder/include_bconfig.php");
 
-$do = $_GET['do'];
+$do = $_GET['do'] ?? '';
 if ($do == "change")
 {
 	$new_print_logo = mysqli_real_escape_string($xrf_db, $_POST['print_logo']);

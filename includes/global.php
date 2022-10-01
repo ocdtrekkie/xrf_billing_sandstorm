@@ -58,4 +58,8 @@ if ($xrf_myusername != "Anonymous User")
     }
 	mysqli_stmt_close($xrf_getuser_query);
 }
+
+// xrf_billing_sandstorm-specific HACK
+require_once("modules/billing/include_bconfig.php");
+// end HACK
 ?>

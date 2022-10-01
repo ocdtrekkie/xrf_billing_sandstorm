@@ -27,7 +27,7 @@ if ($notes != "") echo "<p align=\"left\"><table><tr><td>Notes: $notes</td></tr>
 
 echo "<p><table width=100%>
 <tr><td width=100%><b>Description</b></td><td align=\"right\"><b>Amount</b></td></tr>";
-$qq=0;
+$qq=0; $total=0;
 while ($qq < $num) {
 
 $iid=xrf_mysql_result($resulty,$qq,"iid");

@@ -64,7 +64,8 @@ if ($closed != 1)
 	$query="SELECT * FROM b_charges WHERE oid='$oid'";
 	$result=mysqli_query($xrf_db, $query);
 	$num=mysqli_num_rows($result);
- 
+
+	$i = 0; $totalamount = 0;
 	while ($i < $num) {
 		$amt=xrf_mysql_result($result,$i,"amt");
 		$quantity=xrf_mysql_result($result,$i,"quantity");

@@ -3,7 +3,7 @@ require("ismodule.php");
 $condition="";
 $cndlbl="";
 include "modules/$modfolder/functions_billing.php";
-$filter = $_GET['filter'];
+$filter = $_GET['filter'] ?? '';
 if ($filter == "open")
 {
 	$condition = " WHERE closed = '0'";

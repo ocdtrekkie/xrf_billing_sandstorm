@@ -38,13 +38,12 @@ $qq++;
 }
 $net_income = $total_receipts - $total_expenses;
 
-$fname = xrf_get_fname($xrf_db, $taxassoc);
-$lname = xrf_get_lname($xrf_db, $taxassoc);
+$username = xrf_get_username($xrf_db, $taxassoc);
 $net = xrfb_disp_cash($net_income);
 $receipts = xrfb_disp_cash($total_receipts);
 $expenses = xrfb_disp_cash($total_expenses);
 
-echo "<p align=\"left\">Associate: <b>$fname $lname</b><br>
+echo "<p align=\"left\">Associate: <b>$username</b><br>
 Tax Year: <b>$taxyear</b></p>
 <p align=\"left\">Total Receipts: $receipts<br>
 Total Expenses: $expenses<br> <br>

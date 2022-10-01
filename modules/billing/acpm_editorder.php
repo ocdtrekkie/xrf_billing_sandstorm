@@ -1,7 +1,7 @@
 <?php
 require("ismodule.php");
 require("modules/$modfolder/functions_billing.php");
-$do = $_GET['do'];
+$do = $_GET['do'] ?? '';
 if ($do == "edit")
 {
 $id = $_POST['id'];

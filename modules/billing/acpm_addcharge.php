@@ -1,7 +1,7 @@
 <?php
 require("ismodule.php");
 include "modules/$modfolder/functions_billing.php";
-$do = $_GET['do'];
+$do = $_GET['do'] ?? '';
 if ($do == "add")
 {
 $corderid = mysqli_real_escape_string($xrf_db, $_POST['corderid']);
