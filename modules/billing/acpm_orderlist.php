@@ -19,12 +19,12 @@ if ($cndlbl == "")
 
 echo "<p align=\"left\" class=\"actions-bar\"><b>Actions:</b> <font size=\"2\"><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addorder\">[Create New Invoice]</a></font></p><p><b>$cndlbl Invoices</b></p>";
 
-$query="SELECT * FROM b_orders$condition ORDER BY date DESC";
+$query="SELECT * FROM b_orders$condition ORDER BY date DESC, id DESC";
 $result=mysqli_query($xrf_db, $query);
 
 $num=mysqli_num_rows($result);
 
-echo "<table><tr><td width=50><b>ID</b></td><td width=200><b>Customer</b></td><td width=100><b>Due</b><td width=200><b>Date</b></td></tr>";
+echo "<table><tr><td width=50><b>ID</b></td><td width=300><b>Customer Name</b></td><td width=100><b>Due</b><td width=200><b>Date</b></td></tr>";
 $qq=0;
 while ($qq < $num) {
 

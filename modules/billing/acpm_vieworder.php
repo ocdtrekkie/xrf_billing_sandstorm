@@ -59,6 +59,7 @@ $due = xrfb_disp_cash($amt_due);
 $paid = xrfb_disp_cash($amt_paid);
 $owed = xrfb_disp_cash($amt_due - $amt_paid);
 if ($closed == 0) { $modifylinks = " <a href=\"acp_module_panel.php?modfolder=billing&modpanel=addcharge&passid=$id\">[Add Charge]</a> <a href=\"acp_module_panel.php?modfolder=billing&modpanel=addpayment&passid=$id\">[Add Payment]</a> <a href=\"acp_module_panel.php?modfolder=billing&modpanel=closeorder&passid=$id\">[Close Invoice]</a>"; }
+else { $modifylinks = ""; }
 echo "</table></p>";
 
 if ($subtotal != $due) echo "<p align=\"right\"><table><tr><td width=\"150\">Subtotal:</td><td align=\"right\" width=\"100\">$subtotal</td></tr>
