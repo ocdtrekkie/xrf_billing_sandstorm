@@ -1,3 +1,12 @@
+# 0.0.5
+
+- Added ability to add inventory items to charge.
+- Fixed order list sorting.
+
+# 0.0.4
+
+- Fixed several warnings and errors.
+
 # 0.0.3
 
 - Added details to payments and a payment summary section on the invoice view.
