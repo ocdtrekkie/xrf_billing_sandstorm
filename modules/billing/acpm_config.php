@@ -57,7 +57,7 @@ else
 	echo "
 	<p><b>Billing Configuration</b></p>
 	<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=config&do=change\" method=\"POST\">
-	<table><tr><td>
+	<table><tr><td width=\"350\">
 	<table>
 		<tr><td>Logo URL:</td><td><input type=\"text\" name=\"print_logo\" value=\"$xrfb_print_logo\" size=\"30\"><br>
 		<font size=\"2\">This is the URL of the logo that<br>will print on invoices.<br><i>https://example.com/logo.png</i><p></font></td></tr>
@@ -69,13 +69,14 @@ else
 		<input type=\"text\" name=\"inv_line6\" value=\"$xrfb_inv_line6\" size=\"30\"><br>
 		<font size=\"2\">These lines may be printed on<br>the invoice. Address or contact<br>details may make sense here.<p></font></td></tr>
 	</table>
-	</td><td width=\"50\"></td><td width=\"300\">
+	</td><td width=\"25\"></td><td width=\"350\">
 	<table>
+		<tr><td></td><td><font size=\"2\"><b>WARNING:</b> Be sure to close<br>invoices out before changing<br>the tax rate to avoid applying<br>retroactively!<p></font></td></tr>
 		<tr><td>Tax Rate:</td><td><input type=\"text\" name=\"tax_rate\" value=\"$xrfb_tax_rate\" size=\"30\"><br>
 		<font size=\"2\">If your business is taxable, set<br>the percent rate here.<br><i>ex. 7.5</i><p></font></td></tr>
 	</table>
 	</td></tr></table>
-	<input type=\"submit\" value=\"Submit!\">
+	<input type=\"submit\" value=\"Save Changes\">
 	</form>";
 }
 ?>
