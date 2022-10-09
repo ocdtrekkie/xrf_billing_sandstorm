@@ -26,6 +26,7 @@ $result=mysqli_query($xrf_db, $query) or die(mysqli_error($xrf_db));
 $customer=xrf_mysql_result($result,0,"customer");
 $notes=xrf_mysql_result($result,0,"notes");
 $closed=xrf_mysql_result($result,0,"closed");
+$clsdy = ""; $clsdn = "";
 if ($closed == 1)
 		$clsdy = " checked";
 	else
