@@ -16,7 +16,8 @@ function xrfb_get_category_name($xrf_db, $cid)
 {
 $query="SELECT * FROM b_categories WHERE id='$cid'";
 $result=mysqli_query($xrf_db, $query);
-$desc=xrf_mysql_result($result,0,"desc");
+if (mysqli_num_rows($result) > 0) { $desc=xrf_mysql_result($result,0,"desc"); }
+else { $desc="Default category"; }
 return ($desc);
 }
 

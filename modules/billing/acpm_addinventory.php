@@ -20,7 +20,7 @@ $catid = mysqli_real_escape_string($xrf_db, $_POST['catid']);
 
 mysqli_query($xrf_db, "INSERT INTO b_inventory (descr, longdesc, defamt, catid) VALUES('$descr', '$longdesc', '$defamt', '$catid')") or die(mysqli_error($xrf_db));
 
-xrf_go_redir("acp.php","Inventory added.",6);
+xrf_go_redir("acp_module_panel.php?modfolder=$modfolder&modpanel=inventory","Inventory added.",6);
 }
 else
 {
