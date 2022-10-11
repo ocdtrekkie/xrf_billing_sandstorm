@@ -1,6 +1,14 @@
 <?php
 require("ismodule.php");
 include "modules/$modfolder/functions_billing.php";
+
+if ($xrf_myulevel < 4)
+{
+xrf_go_redir("index.php","Invalid permissions.",2);
+}
+else
+{
+
 $do = $_GET['do'] ?? '';
 if ($do == "add")
 {
@@ -44,5 +52,7 @@ if ($num == 0) echo "<option value='1'>Default category</option>";
 
 echo "</select></td></tr>
 <tr><td></td><td><input type=\"submit\" value=\"Add\"></td></tr></table></form>";
+}
+
 }
 ?>

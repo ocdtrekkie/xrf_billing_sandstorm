@@ -10,6 +10,16 @@ $cash = "$" . $cash;
 return ($cash);
 }
 
+//Function xrfb_get_category_name
+//Use: Gets category name from category id
+function xrfb_get_category_name($xrf_db, $cid)
+{
+$query="SELECT * FROM b_categories WHERE id='$cid'";
+$result=mysqli_query($xrf_db, $query);
+$desc=xrf_mysql_result($result,0,"desc");
+return ($desc);
+}
+
 //Function xrfb_get_item_name
 //Use: Gets item name from item id
 function xrfb_get_item_name($xrf_db, $iid)
