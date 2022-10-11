@@ -107,6 +107,7 @@ opt/app/index.php
 opt/app/install_into_db.sql
 opt/app/install_into_db_billing.sql
 opt/app/install_into_db_billing_2209.1.sql
+opt/app/install_into_db_billing_2210.1.sql
 opt/app/ismodule.php
 opt/app/modules/billing/acpm_addcharge.php
 opt/app/modules/billing/acpm_addinventory.php
