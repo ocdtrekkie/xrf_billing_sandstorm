@@ -23,21 +23,18 @@ $qq++;
 }
 
 echo "</select></td></tr>
-<tr><td><b>Year:</b></td><td><select name=\"taxyear\">
-<option value=\"2022\">2022</option>
-<option value=\"2021\">2021</option>
-<option value=\"2020\">2020</option>
-<option value=\"2019\">2019</option>
-<option value=\"2018\">2018</option>
-<option value=\"2017\">2017</option>
-<option value=\"2016\">2016</option>
-<option value=\"2015\">2015</option>
-<option value=\"2014\">2014</option>
-<option value=\"2013\">2013</option>
-<option value=\"2012\">2012</option>
-<option value=\"2011\">2011</option>
-<option value=\"2010\">2010</option>
-</select></td></tr>
+<tr><td><b>Year:</b></td><td><select name=\"taxyear\">";
+
+$yquery="SELECT date FROM b_orders ORDER BY date ASC LIMIT 1";
+$yresult=mysqli_query($xrf_db, $yquery);
+$startyear=substr(xrf_mysql_result($yresult,0,"date"),0,4);
+$qy=date("Y");
+while ($qy >= $startyear) {
+	echo "<option value=\"$qy\">$qy</option>";
+	$qy--;
+}
+
+echo "</select></td></tr>
 <tr><td></td><td><input type=\"submit\" value=\"Calculate\"></td></tr></table></form>";
 
 ?>
