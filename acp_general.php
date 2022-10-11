@@ -2,7 +2,7 @@
 require_once("includes/global_req_login.php");
 require_once("includes/header.php");
 
-if ($xrf_myulevel < 3)
+if ($xrf_myulevel < 4)
 {
 xrf_go_redir("index.php","Invalid permissions.",2);
 }

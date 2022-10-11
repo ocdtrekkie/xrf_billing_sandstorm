@@ -2,6 +2,13 @@
 require("ismodule.php");
 require("modules/$modfolder/include_bconfig.php");
 
+if ($xrf_myulevel < 4)
+{
+xrf_go_redir("index.php","Invalid permissions.",2);
+}
+else
+{
+
 $do = $_GET['do'] ?? '';
 if ($do == "change")
 {
@@ -78,5 +85,7 @@ else
 	</td></tr></table>
 	<input type=\"submit\" value=\"Save Changes\">
 	</form>";
+}
+
 }
 ?>
