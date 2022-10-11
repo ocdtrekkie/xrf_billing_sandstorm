@@ -30,6 +30,7 @@ $currentdate = date("Y-m-d");
 $passid = $_GET['passid'];
 if ($passid != 0)
 $corderid=(int)$passid;
+else $corderid=""
 
 echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addpayment&do=add\" method=\"POST\">
 <table><tr><td><b>Order ID:</b></td><td><input type=\"text\" name=\"corderid\" value=\"$corderid\" size=\"10\"></td></tr>

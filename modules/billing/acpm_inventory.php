@@ -9,6 +9,7 @@ xrf_go_redir("index.php","Invalid permissions.",2);
 }
 else
 {
+	$oldcatid = 0;
 	echo "<p align=\"left\" class=\"actions-bar\"><b>Actions:</b> <font size=\"2\"><a href=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addinventory\">[Add Inventory]</a></font></p><p><b>Inventory Management</b></p><table width=100%>";
 	
 	$query="SELECT * FROM b_inventory ORDER BY catid ASC, id ASC";

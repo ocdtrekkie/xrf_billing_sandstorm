@@ -9,7 +9,7 @@ xrf_go_redir("index.php","Invalid permissions.",2);
 else
 {
 
-$do = $_GET['do'];
+$do = $_GET['do'] ?? '';
 if ($do == "change")
 {
 	$new_site_name = mysqli_real_escape_string($xrf_db, $_POST['site_name']);
@@ -110,6 +110,7 @@ if ($do == "change")
 }
 else
 {
+	$vlogy = ""; $vlogn = "";
 	if ($xrf_vlog_enabled == 1)
 		$vlogy = " checked";
 	else
