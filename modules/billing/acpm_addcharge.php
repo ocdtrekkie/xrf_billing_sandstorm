@@ -28,7 +28,7 @@ else
 {
 echo "<b>Add New Charge</b><p>";
 
-$query="SELECT * FROM b_inventory ORDER BY catid, id ASC";
+$query="SELECT * FROM b_inventory WHERE hidden = 0 ORDER BY catid, id ASC";
 $result=mysqli_query($xrf_db, $query);
 $num=mysqli_num_rows($result);
 $passid = $_GET['passid'];

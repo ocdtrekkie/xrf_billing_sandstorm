@@ -25,14 +25,23 @@ else
 	$longdesc=xrf_mysql_result($result,$qq,"longdesc");
 	$defamt=xrf_mysql_result($result,$qq,"defamt");
 	$catid=xrf_mysql_result($result,$qq,"catid");
+	$hidden=xrf_mysql_result($result,$qq,"hidden");
+	$is_expense=xrf_mysql_result($result,$qq,"is_expense");
+	$apply_salestax=xrf_mysql_result($result,$qq,"apply_salestax");
 	$cash = xrfb_disp_cash($defamt);
+	if ($hidden == 1) { $opac1 = "<span style=\"opacity:0.5;\">"; $opac2 = "</span>"; $hidd = ", HIDDEN"; }
+	else { $opac1 = ""; $opac2 = ""; $hidd = ""; }
+	if ($is_expense == 1) { $isexp = ", NOT COUNTED AS INCOME"; }
+	else { $isexp = ""; }
+	if ($apply_salestax == 1) { $stax = ", SALES TAX APPLIES"; }
+	else { $stax = ""; }
 	
 	if ($oldcatid != $catid) {
 		$catname = xrfb_get_category_name($xrf_db, $catid);
 		echo "<tr><td align=\"center\" style=\"height:50px; vertical-align:middle;\"><b>$catname</b></td></tr>";
 	}
 
-	echo "<tr><td align=\"left\"><details><summary>$descr - $cash</summary><p>$longdesc</p></details></td></tr>";
+	echo "<tr><td align=\"left\"><details><summary>$opac1$descr - $cash$opac2</summary><p><font size=2>ID: $id$hidd$isexp$stax</font><br>$longdesc</p></details></td></tr>";
 	$oldcatid = $catid;
 	$qq++;
 	}
