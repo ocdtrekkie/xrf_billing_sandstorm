@@ -18,7 +18,7 @@ $qq=0;
 while ($qq < $num1) {
 	$orderid=xrf_mysql_result($result1,$qq,"id");
 	$paid=xrf_mysql_result($result1,$qq,"amt_paid");
-	$query2 = "SELECT * FROM b_charges WHERE oid = '$orderid'";
+	$query2 = "SELECT * FROM (b_charges INNER JOIN b_inventory ON b_charges.iid = b_inventory.id) WHERE oid = '$orderid'";
 	$result2=mysqli_query($xrf_db, $query2);
 	$num2=mysqli_num_rows($result2);
 	$qz=0;
@@ -26,8 +26,9 @@ while ($qq < $num1) {
 		$iid=xrf_mysql_result($result2,$qz,"iid");
 		$amt=xrf_mysql_result($result2,$qz,"amt");
 		$qua=xrf_mysql_result($result2,$qz,"quantity");
+		$isexp=xrf_mysql_result($result2,$qz,"is_expense");
 		
-		if ($iid == 3 || $iid == 4 || $iid == 5 || $iid == 13)
+		if ($isexp == 1)
 			$total_expenses = $total_expenses + $amt * $qua;
 	
 	$qz++;
