@@ -36,7 +36,7 @@ if ($passid != 0)
 $corderid=(int)$passid;
 
 echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addcharge&do=add\" method=\"POST\">
-<table><tr><td><b>Order ID:</b></td><td><input type=\"text\" name=\"corderid\" value=\"$corderid\" size=\"10\"></td></tr>
+<table><tr><td><b>Order ID:</b></td><td><input type=\"number\" name=\"corderid\" value=\"$corderid\" size=\"10\" required></td></tr>
 <tr><td><b>Charge:</b></td><td><select name=\"ccharge\">";
 
 $qq=0;
@@ -54,7 +54,7 @@ $qq++;
 }
 
 echo "</select></td></tr>
-<tr><td><b>Amount and Quantity:</b></td><td><input type=\"text\" name=\"camount\" size=\"10\"> USD x <input type=\"text\" name=\"cquantity\" value=\"1\" size=\"5\"></td></tr>
+<tr><td><b>Amount and Quantity:</b></td><td><input type=\"text\" name=\"camount\" size=\"10\" required> USD x <input type=\"number\" name=\"cquantity\" value=\"1\" size=\"5\" required></td></tr>
 <tr><td><b>Waived?</b></td><td><select name=\"cstatus\"><option value=\"N\">No</option><option value=\"W\">Yes</option></select></td></tr>
 <tr><td></td><td><input type=\"submit\" value=\"Add\"></td></tr></table></form>";
 }
