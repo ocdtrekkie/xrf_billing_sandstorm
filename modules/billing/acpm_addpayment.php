@@ -33,10 +33,10 @@ $corderid=(int)$passid;
 else $corderid="";
 
 echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addpayment&do=add\" method=\"POST\">
-<table><tr><td><b>Order ID:</b></td><td><input type=\"text\" name=\"corderid\" value=\"$corderid\" size=\"10\"></td></tr>
-<tr><td><b>Amount:</b></td><td><input type=\"text\" name=\"camount\" size=\"10\"> USD</td></tr>
+<table><tr><td><b>Order ID:</b></td><td><input type=\"number\" name=\"corderid\" value=\"$corderid\" size=\"10\" required></td></tr>
+<tr><td><b>Amount:</b></td><td><input type=\"text\" name=\"camount\" size=\"10\" required> USD</td></tr>
 <tr><td><b>Method:</b></td><td><input type=\"text\" name=\"cdetails\" size=\"50\"></td></tr>
-<tr><td><b>Date Paid:</b></td><td><input type=\"text\" name=\"cdate\" value=\"$currentdate\" size=\"50\">
+<tr><td><b>Date Paid:</b></td><td><input type=\"date\" name=\"cdate\" value=\"$currentdate\" required>
 <tr><td></td><td><input type=\"submit\" value=\"Add\"></td></tr></table></form>";
 }
 ?>

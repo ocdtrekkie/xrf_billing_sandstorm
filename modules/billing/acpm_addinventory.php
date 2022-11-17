@@ -31,7 +31,7 @@ $result=mysqli_query($xrf_db, $query);
 $num=mysqli_num_rows($result);
 
 echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addinventory&do=add\" method=\"POST\">
-<table><tr><td><b>Description:</b></td><td><input type=\"text\" name=\"descr\" size=\"50\"></td></tr>
+<table><tr><td><b>Description:</b></td><td><input type=\"text\" name=\"descr\" size=\"50\" required></td></tr>
 <tr><td><b>Detailed Description:</b></td><td><textarea name=\"longdesc\" rows=\"4\" cols=\"50\"></textarea></td></tr>
 <tr><td><b>Default Amount:</b></td><td><input type=\"text\" name=\"defamt\" size=\"10\"></td></tr>
 <tr><td><b>Category:</b></td><td><select name=\"catid\">";

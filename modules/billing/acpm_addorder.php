@@ -19,8 +19,8 @@ else
 echo "<b>Create New Invoice</b><p>";
 $currentdate = date("Y-m-d");
 echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addorder&do=add\" method=\"POST\">
-<table><tr><td><b>Customer Name:</b></td><td><input type=\"text\" name=\"customer\" size=\"50\"> <input type=\"submit\" value=\"Create\"></td></tr>
-<tr><td><b>Date of Invoice:</b></td><td><input type=\"text\" name=\"date\" value=\"$currentdate\" size=\"50\">
+<table><tr><td><b>Customer Name:</b></td><td><input type=\"text\" name=\"customer\" size=\"50\" required> <input type=\"submit\" value=\"Create\"></td></tr>
+<tr><td><b>Date of Invoice:</b></td><td><input type=\"date\" name=\"date\" value=\"$currentdate\" required>
 <tr><td><b>Notes:</b></td><td><textarea name=\"notes\" rows=\"8\" cols=\"50\"></textarea></td></tr>
 <tr><td><b>Associate:</b></td><td><select name=\"assoc\">";
 
