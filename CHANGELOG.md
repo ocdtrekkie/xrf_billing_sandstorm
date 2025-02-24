@@ -1,3 +1,8 @@
+# 0.0.7
+
+- Improved input form validation.
+- Made more order details editable.
+
 # 0.0.6
 
 - Added inventory management panel.
