@@ -20,7 +20,7 @@ echo "<b>Create New Invoice</b><p>";
 $currentdate = date("Y-m-d");
 echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addorder&do=add\" method=\"POST\">
 <table><tr><td><b>Customer Name:</b></td><td><input type=\"text\" name=\"customer\" size=\"50\" required> <input type=\"submit\" value=\"Create\"></td></tr>
-<tr><td><b>Date of Invoice:</b></td><td><input type=\"date\" name=\"date\" value=\"$currentdate\" required></td></tr>
+<tr><td><b>Date of Invoice:</b></td><td><input type=\"date\" name=\"date\" id=\"datePicker\" value=\"$currentdate\" required></td></tr>
 <tr><td><b>Notes:</b></td><td><textarea name=\"notes\" rows=\"8\" cols=\"50\"></textarea></td></tr>
 <tr><td><b>Associate:</b></td><td><select name=\"assoc\">";
 
@@ -39,5 +39,11 @@ $qq++;
 }
 
 echo "</select></td></tr></table></form>";
+
+echo "<script>document.addEventListener(\"DOMContentLoaded\", function(event){
+var d = new Date(); 
+var today = d.getFullYear()+\"-\"+(\"0\"+(d.getMonth()+1)).slice(-2)+\"-\"+(\"0\"+d.getDate()).slice(-2);
+document.getElementById(\"datePicker\").value = today;
+});</script>"; // https://stackoverflow.com/a/63663084
 }
 ?>

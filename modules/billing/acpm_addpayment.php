@@ -36,7 +36,13 @@ echo "<form action=\"acp_module_panel.php?modfolder=$modfolder&modpanel=addpayme
 <table><tr><td><b>Order ID:</b></td><td><input type=\"number\" name=\"corderid\" value=\"$corderid\" size=\"10\" required></td></tr>
 <tr><td><b>Amount:</b></td><td><input type=\"text\" name=\"camount\" size=\"10\" required> USD</td></tr>
 <tr><td><b>Method:</b></td><td><input type=\"text\" name=\"cdetails\" size=\"50\"></td></tr>
-<tr><td><b>Date Paid:</b></td><td><input type=\"date\" name=\"cdate\" value=\"$currentdate\" required>
+<tr><td><b>Date Paid:</b></td><td><input type=\"date\" name=\"cdate\" id=\"datePicker\" value=\"$currentdate\" required>
 <tr><td></td><td><input type=\"submit\" value=\"Add\"></td></tr></table></form>";
+
+echo "<script>document.addEventListener(\"DOMContentLoaded\", function(event){
+var d = new Date(); 
+var today = d.getFullYear()+\"-\"+(\"0\"+(d.getMonth()+1)).slice(-2)+\"-\"+(\"0\"+d.getDate()).slice(-2);
+document.getElementById(\"datePicker\").value = today;
+});</script>"; // https://stackoverflow.com/a/63663084
 }
 ?>
